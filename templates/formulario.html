@@ -1,28 +1,46 @@
-<form method="POST" action="/processar">
-    <div class="campo">
-        <label for="nome">Nome Completo</label>
-        <input type="text" id="nome" name="nome" required>
-    </div>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário de Cadastro</title>
+</head>
+<body>
+<div class="container">
+    <h1>Formulário de Cadastro</h1>
+    <p>Preencha os dados abaixo:</p>
 
-    <div class="campo">
-        <label for="idade">Idade</label>
-        <input type="number" id="idade" name="idade" required>
-    </div>
+    <form action="/processar" method="POST">
+        <div class="campo">
+            <label for="nome">Nome completo:</label>
+            <input type="text" id="nome" name="nome" required>
+        </div>
 
-    <div class="campo">
-        <label for="curso">Cursos</label>
-        <select name="curso" id="curso">
-            <option value="">Selecione...</option>
-            <option value="Python">Python</option>
-            <option value="Flask">Flask</option>
-            <option value="HTML/CSS">HTML/CSS</option>
-        </select>
-    </div>
-
-    <button type="submit">Enviar Dados</button>
-</form>
-
-<div class="Resultado">
-    <h3>Resultado do Processamento</h3>
-    <pre>{{ resultado }}</pre>
+        <div class="campo">
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" name="idade" required>
+        </div>
+        <div class="campo">
+            <label for="curso">Curso:</label>
+            <select name="curso" id="curso">
+                <option value="">Selecione...</option>
+                <option value="Python">Python</option>
+                <option value="Flask">Flask</option>
+                <option value="HTML/CSS">HTML/CSS</option>
+            </select>
+        </div>
+        <button type="submit">Enviar dados</button>
+    </form>
 </div>
+<!--Área onde o resultado vai aparecer (Preenchido pelo Flask)-->
+<div class="resultado">
+    <h3>Resultado do processamento:</h3>
+<!--
+        Isso é um comentário JINJA2 (Template do Flask)
+        O {{ resultado }} será substituído pelo texto que o Python enviar
+-->
+    <p>{{resultado}}</p>
+</div>
+
+
+</body>
+</html>
