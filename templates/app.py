@@ -1,7 +1,6 @@
-from flask import Flask, render_template, request
+from flask import flask, render_template, request
 
 app = Flask(__name__)
-
 @app.route('/formulario')
 def pagina_inicio():
     return render_template('formulario.html', resultado="Aguardando envio...")
@@ -52,7 +51,7 @@ def processar_formulario():
 
             mensagem_resultado = "Sucesso!\n" + mensagem_resultado
 
-        return render_template("formulario.html", resultado=mensagem_resultado)
+        return render_template('formulario.html', resultado=mensagem_resultado)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)

@@ -1,39 +1,28 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Formulario</title>
-</head>
-<body>
-<div class="container">
-    <h1>Formulario de Cadastro</h1>
-    <p>Preencha os dados abaixos:</p>
+<form method="POST" action="/processar">
+    <div class="campo">
+        <label for="nome">Nome Completo</label>
+        <input type="text" id="nome" name="nome" required>
+    </div>
 
-    <from method="POST" action="/processar">
-        <div class="campo">
-            <label for="none">Nome Completo</label>
-            <input type="text" id="nome" name="nome" required>
-        </div>
-        <div class="campo">
-            <label for="idade">Idade</label>
-            <input type="Number" id="idade" name="idade" required>
-        </div>
-        <div class="campo">
-            <label for="Cursos">Cursos</label>
-            <select name="curso" id="curso">
-                <option value="">Selecione...</option>
-                <option value="">Python</option>
-                <option value="">Flask</option>
-                <option value="">HTML/CSS</option>
-            </select>
-        </div>
-        <button>Enviar Dados</button>
-    </from>
-</div>
+    <div class="campo">
+        <label for="idade">Idade</label>
+        <input type="number" id="idade" name="idade" required>
+    </div>
 
-<!--Area do resultado vai aparecer (preenchido pelo Flask)-->
+    <div class="campo">
+        <label for="curso">Cursos</label>
+        <select name="curso" id="curso">
+            <option value="">Selecione...</option>
+            <option value="Python">Python</option>
+            <option value="Flask">Flask</option>
+            <option value="HTML/CSS">HTML/CSS</option>
+        </select>
+    </div>
+
+    <button type="submit">Enviar Dados</button>
+</form>
+
 <div class="Resultado">
     <h3>Resultado do Processamento</h3>
+    <pre>{{ resultado }}</pre>
 </div>
-</body>
-</html>
