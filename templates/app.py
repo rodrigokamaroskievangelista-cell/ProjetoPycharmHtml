@@ -37,20 +37,20 @@ else:
 
 # Estrutura condicional para o Curso
 
-    if curso: == "Python":
+if curso == "Python":
     mensagem_curso = "Otima escolha, você é versátil!"
-    elif curso == "Flask":
+elif curso == "Flask":
     mensagem_curso = "Otima escolha gafanhoto!"
-    elif == "HTML/CSS":
+elif curso == "HTML/CSS":
     mensagem_curso = "Fundamental pequenino gafanhoto"
 else:
     mensagem_curso = "Curso Interressante"
-    mensagem_resultado = f"{mensagem_curso}\n{mensagem_idade}\n{mensagem_idade}"
+    mensagem_resultado = f"{mensagem_base}\n{mensagem_idade}\n{mensagem_curso}"
 
-    mensagem_resultado = "Sucesso!\n" mensagem_resultado
+    mensagem_resultado = "Sucesso!\n" mensagem_resultado:
 
-
-return render_template("formulario.html", resultado=mensagem_resultado)
+    assert isinstance(mensagem_resultado, object)
+    return render_template("formulario.html", resultado=mensagem_resultado)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0',port=5000)
