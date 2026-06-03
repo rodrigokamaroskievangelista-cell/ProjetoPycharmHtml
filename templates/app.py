@@ -5,7 +5,7 @@ app = Flask(__name__)
 def pagina_inicio():
     return render_template('formulario.html', resultado="Aguardando envio...")
 
-@app.route('/processar', methods=['POST'])
+@app.route('/processar', method=['POST'])
 def processar_formulario():
     if request.method == 'POST':
 
@@ -18,9 +18,9 @@ def processar_formulario():
  O nome entre colchetes deve ser igual ao "nome" do campo formulario
  HTML """
 
-nome = request.form['nome']   # Captura o campo nome
-idade = request.form['idade'] # Captura o campo idade
-curso = request.form['curso'] # Captura o campo curso
+nome = request.form.get('nome')   # Captura o campo nome
+idade = request.form.get('idade') # Captura o campo idade
+curso = request.form.get('curso') # Captura o campo curso
 
 # Validaçao de dados
 if not nome or not idade or not curso:
@@ -48,6 +48,7 @@ else:
     mensagem_resultado = f"{mensagem_curso}\n{mensagem_idade}\n{mensagem_idade}"
 
     mensagem_resultado = "Sucesso!\n" mensagem_resultado
+
 
 return render_template("formulario.html", resultado=mensagem_resultado)
 
